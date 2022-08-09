@@ -67,16 +67,16 @@ req.onload = function () {
                 tension: 0,
                 fill: false,
                 data: dataArr2,
-                backgroundColor: '#ffb500',
-                yAxisID: 'y-axis-2',
+                borderColor: '#ffb500',
+                yAxisID: 'y-axis-1',
             }, {
                 label: '旧市大',
                 type: 'line',
                 tension: 0,
                 fill: false,
                 data: dataArr3,
-                backgroundColor: 'lightblue',
-                yAxisID: 'y-axis-3',
+                borderColor: 'lightblue',
+                yAxisID: 'y-axis-1',
             }]
         },
         options: {
@@ -98,38 +98,12 @@ req.onload = function () {
                     ticks: {
                         max: 50,
                         min: 0,
-                        stepSize: 1
+                        stepSize: 5
                     },
                     gridLines: {
                         color: 'transparent',
                         zeroLineColor: '#000'
                     },
-                }, {
-                    id: 'y-axis-2',
-                    type: 'linear',
-                    position: 'right',
-                    ticks: {
-                        max: 50,
-                        min: 0,
-                        stepSize: 1
-                    },
-                    gridLines: {
-                        zeroLineColor: '#000'
-                    }
-                }, {
-                    id: 'y-axis-3',
-                    type: 'linear',
-                    position: 'right',
-                    ticks: {
-                        max: 50,
-                        min: 0,
-                        stepSize: 1
-                    },
-                    gridLines: {
-                        color: 'transparent',
-                        drawOnChartArea: false,
-                        zeroLineColor: '#000'
-                    }
                 }],
                 xAxes: [{
                     gridLines: {

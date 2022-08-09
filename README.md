@@ -1,2 +1,2 @@
 # omu-covid19-chart(開発中)
-* 
+* [![pages-build-deployment](https://github.com/asha-ndf/omu-covid19-chart/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/asha-ndf/omu-covid19-chart/actions/workflows/pages/pages-build-deployment)
