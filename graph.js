@@ -8,7 +8,7 @@ let labelsArr = [],
 const ctx = document.getElementById('myChart');
 
 const req = new XMLHttpRequest();
-req.open('get', 'https://asha-ndf.github.io/omu-covid19-chart/graph_data.csv', true); // 対象のCSVファイルを読み込む
+req.open('get', 'https://asha-ndf.github.io/omu-covid19-chart/data/graph_data.csv', true); // 対象のCSVファイルを読み込む
 req.send(null);
 req.onload = function () {
     let tmp = req.responseText.split('\n');
