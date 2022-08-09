@@ -18,9 +18,9 @@ req.onload = function () {
         const data2 = data.filter(Boolean);
 
         // それぞれのデータが各行内の何番目にあるかを取得する
-        let data1Index = 1
-        //let data2Index = 
-        //let data3Index = 
+        let data1Index = tmp[0].split(',').indexOf('omu')
+        let data2Index = tmp[0].split(',').indexOf('opu');
+        let data3Index = tmp[0].split(',').indexOf('ocu');
         // 横軸のラベルとなる年月のデータをラベル用の配列にぶち込む
         labelsArr.push(data2[0]);
 
@@ -29,14 +29,12 @@ req.onload = function () {
         if (data2[data1Index] !== undefined) {
             dataArr1.push(Number(data2[data1Index]));
         }
-        /*
-        if(data2[data2Index] !== undefined) {
+        if (data2[data2Index] !== undefined) {
             dataArr2.push(Number(data2[data2Index]));
         }
-        if(data2[data3Index] !== undefined) {
+        if (data2[data3Index] !== undefined) {
             dataArr3.push(Number(data2[data3Index]));
         }
-        */
     });
 
 
@@ -56,30 +54,30 @@ req.onload = function () {
         data: {
             labels: labelsArr,
             datasets: [{
-                label: '総感染者数',
+                label: '全CP',
                 type: 'line',
                 tension: 0,
                 fill: false,
                 data: dataArr1,
                 borderColor: '#004098',
-                yAxisID: 'y-axis-1',
-                skipNull: true,
-            }/*, {
-					label: '売上高',
-					type: 'line',
-					tension: 0,
-					fill: false,
-					data: dataArr2,
-					backgroundColor: '#ffb500',
-					yAxisID: 'y-axis-1',
-				}, {
-					label: '売上高営業利益率',
-					type: 'line',
-					tension: 0,
-					data: dataArr3,
-					backgroundColor: 'lightblue',
-					yAxisID: 'y-axis-2',
-				}*/]
+                yAxisID: 'y-axis-1'
+            }, {
+                label: '旧府大',
+                type: 'line',
+                tension: 0,
+                fill: false,
+                data: dataArr2,
+                backgroundColor: '#ffb500',
+                yAxisID: 'y-axis-2',
+            }, {
+                label: '旧市大',
+                type: 'line',
+                tension: 0,
+                fill: false,
+                data: dataArr3,
+                backgroundColor: 'lightblue',
+                yAxisID: 'y-axis-3',
+            }]
         },
         options: {
             tooltips: {
@@ -96,7 +94,7 @@ req.onload = function () {
                 yAxes: [{
                     id: 'y-axis-1',
                     type: 'linear',
-                    //position: 'left',
+                    position: 'left',
                     ticks: {
                         max: 50,
                         min: 0,
@@ -106,34 +104,33 @@ req.onload = function () {
                         color: 'transparent',
                         zeroLineColor: '#000'
                     },
-                },/* {
-						id: 'y-axis-2',
-						type: 'linear',
-						position: 'right',
-						ticks: {
-							display: false,
-							max: 10,
-							min: 0,
-							stepSize: 1
-						},
-						gridLines: {
-							zeroLineColor: '#000'
-						}
-					}, {
-						id: 'y-axis-3',
-						type: 'linear',
-						position: 'right',
-						ticks: {
-							max: 130000,
-							min: 0,
-							stepSize: 10000
-						},
-						gridLines: {
-							color: 'transparent',
-							drawOnChartArea: false,
-							zeroLineColor: '#000'
-						}
-					}*/],
+                }, {
+                    id: 'y-axis-2',
+                    type: 'linear',
+                    position: 'right',
+                    ticks: {
+                        max: 50,
+                        min: 0,
+                        stepSize: 1
+                    },
+                    gridLines: {
+                        zeroLineColor: '#000'
+                    }
+                }, {
+                    id: 'y-axis-3',
+                    type: 'linear',
+                    position: 'right',
+                    ticks: {
+                        max: 50,
+                        min: 0,
+                        stepSize: 1
+                    },
+                    gridLines: {
+                        color: 'transparent',
+                        drawOnChartArea: false,
+                        zeroLineColor: '#000'
+                    }
+                }],
                 xAxes: [{
                     gridLines: {
                         color: 'transparent',
