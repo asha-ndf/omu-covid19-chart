@@ -6,7 +6,7 @@ let labelsArr = [],
     dataArr3 = [];
 // 描画するキャンバスを指定する
 const ctx = document.getElementById('myChart');
-ctx.canvas.height = document.documentElement.clientHeight*0.8;
+ctx.height = document.documentElement.clientHeight*0.8;
 const req = new XMLHttpRequest();
 req.open('get', 'https://asha-ndf.github.io/omu-covid19-chart/data/graph_data.csv', true); // 対象のCSVファイルを読み込む
 req.send(null);
