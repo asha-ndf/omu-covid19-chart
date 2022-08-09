@@ -6,7 +6,6 @@ let labelsArr = [],
     dataArr3 = [];
 // 描画するキャンバスを指定する
 const ctx = document.getElementById('myChart');
-ctx.height = window.innerHeight * 0.8;
 const req = new XMLHttpRequest();
 req.open('get', 'https://asha-ndf.github.io/omu-covid19-chart/data/graph_data.csv', true); // 対象のCSVファイルを読み込む
 req.send(null);
@@ -85,7 +84,6 @@ req.onload = function () {
                 intersect: false,
             },
             responsive: true,
-            maintainAspectRatio: false,
             elements: {
                 point: {
                     radius: 0 // これを記述するとデータごとの●が消える
