@@ -23,7 +23,7 @@ req.onload = function () {
         // 横軸のラベルとなる年月のデータをラベル用の配列にぶち込む
         
         if (data2[0] !== undefined) {
-            labelsArr.push(Number(data2[0]));
+            labelsArr.push(data2[0]);
         }
 
         // それぞれのデータをそれぞれの配列にぶち込む
