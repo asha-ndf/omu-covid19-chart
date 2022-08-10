@@ -14,15 +14,19 @@
 </head>
 
 <body>
-    <h1>OMU-covid19-chart 非公式(β)</h1>
+    <h1>OMU-covid19-chart 非公式(1.0)</h1>
     <h3>概要</h3>
     <p>大阪公立大学の新型コロナウイルス感染症の発生状況(検査結果判明日)をグラフ化したものです。</p>
     <p>データは2022年8月5日時点のものを使用しています。</p>
+    <p>試験的に自動更新機能を追加しているので、それ以降のデータの可能性もあります。</p>
     <p>最新の情報は<a href="https://www.omu.ac.jp/about/efforts/covid19/">大学ホームページ</a>をご覧ください。</p>
     <h3>注意</h3>
     <p>データ処理にあたり、検査結果判明日が不明とされているものは除外してあります。</p>
     <p>Deploy status: <img
             src="https://github.com/asha-ndf/omu-covid19-chart/actions/workflows/pages/pages-build-deployment/badge.svg" />
+    </p>
+    <p>Get-data Status: <img
+            src="https://github.com/asha-ndf/omu-covid19-chart/actions/workflows/update.yml/badge.svg" />
     </p>
     <canvas id="myChart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
