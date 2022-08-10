@@ -1,0 +1,25 @@
+name: Scheduled fetch
+
+on:
+  workflow_dispatch:
+  #schedule:
+    # 毎日9:44分に実行 (JST=UTC+9)
+    #- cron: '44 0 * * *'
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: fetch
+        run: |
+          pip install -r requirements.txt
+          python3 getdata.py
+      - name: commit and push
+        run: |
+          git config --global user.email "workflow@example.com"
+          git config --global user.name "workflow user"
+          git add data/graph_data.csv
+          git commit -m 'update data' && git push ${REPO} HEAD:${{github.event.pull_request.head.ref}} || true
+          git push
