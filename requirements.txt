@@ -1,4 +1,4 @@
 pandas
-tabula
+tabula-py
 requests
 datetime
