@@ -21,7 +21,10 @@ req.onload = function () {
         let data2Index = tmp[0].split(',').indexOf('opu');
         let data3Index = tmp[0].split(',').indexOf('ocu');
         // 横軸のラベルとなる年月のデータをラベル用の配列にぶち込む
-        labelsArr.push(data2[0]);
+        
+        if (data2[0] !== undefined) {
+            labelsArr.push(Number(data2[0]));
+        }
 
         // それぞれのデータをそれぞれの配列にぶち込む
         // 総感染者数
