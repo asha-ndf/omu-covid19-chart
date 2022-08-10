@@ -1,10 +1,10 @@
-name: Scheduled fetch
+name: get-latest-data
 
 on:
   workflow_dispatch:
-  #schedule:
-    # 毎日9:44分に実行 (JST=UTC+9)
-    #- cron: '44 0 * * *'
+  schedule:
+    # 毎日0:00分に実行
+    - cron: '00 15 * * *'
 
 jobs:
   build:
