@@ -44,10 +44,11 @@ req.onload = function () {
     console.log(labelsArr);
     dataArr1.shift();
     console.log(dataArr1);
-    /*
     dataArr2.shift();
+    console.log(dataArr2);
     dataArr3.shift();
-    */
+    console.log(dataArr3);
+
     let myBarChart01 = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -86,7 +87,7 @@ req.onload = function () {
             responsive: true,
             elements: {
                 point: {
-                    radius: 0 // これを記述するとデータごとの●が消える
+                    radius: 0
                 }
             },
             scales: {
