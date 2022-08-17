@@ -1,4 +1,4 @@
-from sre_constants import SUCCESS
+print("=========開始=========")
 import pandas as pd
 import tabula
 import re
@@ -11,6 +11,9 @@ html = requests.get(load_url)
 
 urls = re.findall(r'covid19-no-hasseijokyo_\d{8}.pdf', html.text)
 pdf_path = "https://www.omu.ac.jp/assets/" + urls[0]
+
+print("データ取得元URL")
+print(urls)
 
 # lattice=Trueでテーブルの軸線でセルを判定
 dfs = tabula.read_pdf(pdf_path, lattice=True, pandas_options={'header': None}, pages = 'all')
@@ -43,5 +46,7 @@ omu = pd.DataFrame(gb_omu[2].sum()).rename(columns={2: 'omu'})
 all = pd.concat([omu,opu,ocu], axis=1).fillna(0)
 all["opu"] = all["opu"].astype('int')
 all["ocu"] = all["ocu"].astype('int')
+print(all)
 all.to_csv("data/graph_data.csv")
 print("SUCCESS")
+print("=========終了=========")
