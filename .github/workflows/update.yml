@@ -3,8 +3,8 @@ name: get-latest-data
 on:
   workflow_dispatch:
   schedule:
-    # 毎日0:00分に実行
-    - cron: '00 15 * * *'
+    # 毎日21:10分に実行
+    - cron: '10 12 * * *'
 
 jobs:
   build:
